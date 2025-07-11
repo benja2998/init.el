@@ -10,6 +10,12 @@
   (package-install 'lsp-ui))
 (require 'lsp-mode)
 
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+
+(require 'evil)
+(evil-mode 1)
+
 (require 'lsp-ui)
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
